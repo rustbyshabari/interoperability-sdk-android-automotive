@@ -49,5 +49,8 @@ dependencies {
 	// Coroutines required for 'fetchInteroperability' to run in the background
     //noinspection UseTomlInstead
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+
+    //noinspection UseTomlInstead
+    implementation("com.google.code.gson:gson:2.13.2")
 	
 }
