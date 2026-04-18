@@ -6,8 +6,6 @@ Run SDK
 
 Usage
 
-Usage
-
     import kotlinx.coroutines.Dispatchers
     import kotlinx.coroutines.withContext
     import rust.interop.bridge.*
