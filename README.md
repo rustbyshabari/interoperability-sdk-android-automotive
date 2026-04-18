@@ -29,7 +29,10 @@ Usage
         }        
     }
 
-Screenshot
-<img width="1920" height="1080" alt="Screenshot (195)" src="https://github.com/user-attachments/assets/118c3363-0887-4856-ade8-595ca2014581" />
+Screenshot (Page 1)
+<img width="1080" height="600" alt="aaos1" src="https://github.com/user-attachments/assets/7b674202-bc4b-4e2b-a194-b60817b90660" />
+
+Screenshot (Page 4)
+<img width="1080" height="600" alt="aaos2" src="https://github.com/user-attachments/assets/edb50c96-0e0c-46ce-a609-d407f0c6c0be" />
 
 **@AIAmitSuri, Co-creator/Co-founder (🙏 Mata Shabri 🙏)**
