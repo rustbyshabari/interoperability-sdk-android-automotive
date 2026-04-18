@@ -6,43 +6,26 @@ Run SDK
 
 Usage
 
-    private fun loadData() {
-        nextBtn.isEnabled = false
-        prevBtn.isEnabled = false
-        loadingBar.visibility = View.VISIBLE
-        statusTv.text = "Loading..."
-
-        lifecycleScope.launch {
-            try {
-                val result = withContext(Dispatchers.IO) {
-                    val params = FilterParams(null, null, null, null, currentPage.toString(), null)
-                    fetchInteroperability(params)
-                }
-
-                dataContainer.removeAllViews()
-
-                result.pagination?.let { meta ->
-                    totalPages = meta.totalPages.toInt()
-                }
-
-                statusTv.text = "Page $currentPage of $totalPages"
-
-                prevBtn.isEnabled = currentPage > 1
-                nextBtn.isEnabled = currentPage < totalPages
-                prevBtn.alpha = if (prevBtn.isEnabled) 1.0f else 0.3f
-                nextBtn.alpha = if (nextBtn.isEnabled) 1.0f else 0.3f
-
-                result.data.forEach { item ->
-                    dataContainer.addView(createDataCard(item))
-                }
-
-            } catch (e: Exception) {
-                statusTv.text = "Sync Error"
-                prevBtn.isEnabled = currentPage > 1
-                nextBtn.isEnabled = (currentPage < totalPages)
-            } finally {
-                loadingBar.visibility = View.INVISIBLE
-            }
+    import kotlinx.coroutines.Dispatchers
+    import kotlinx.coroutines.withContext
+    import rust.interop.bridge.* // JNI/UniFFI generated code
+    
+    /**
+     * Pure logic to fetch data from the Rust bridge.
+     * Returns the response or throws an exception.
+     */
+    suspend fun fetchDataFromRust(page: Int): FilterResponse {
+        // 1. Prepare parameters
+        val params = FilterParams(
+            null, null, null, null, 
+            page.toString(), 
+            null
+        )
+    
+        // 2. Switch to IO thread for the JNI/Rust call
+        return withContext(Dispatchers.IO) {
+            // 3. Call the bridge function
+            fetchInteroperability(params)
         }
     }
 
