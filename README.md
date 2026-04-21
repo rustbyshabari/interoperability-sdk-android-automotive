@@ -35,4 +35,4 @@ Screenshot (Page 1)
 Screenshot (Page 4)
 <img width="1080" height="600" alt="aaos2" src="https://github.com/user-attachments/assets/edb50c96-0e0c-46ce-a609-d407f0c6c0be" />
 
-**(🙏 Mata Shabri 🙏)**
+**🙏 Mata Shabri 🙏**
